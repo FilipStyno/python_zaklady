@@ -7,7 +7,6 @@ neodsazeným řádkem.
 Počet mezer v odsazení je libovolný, ale musí být konzistentní aspoň v rámci jednoho bloku.
 K odsazení musí být použita minimálně jedna mezera.
 Obvykle se k odsazování používá tubulátor, který bývá nejčastěji nastaven na 4 mezery.
-'''
 
 # Odsazení bloku kódu uvnitř cyklu a podmínky
 for i in range(1, 10):
@@ -18,7 +17,6 @@ for i in range(1, 10):
         print('odd')
 
 
-'''
 Dokumentační řetězce v Pythonu (docstrings)
 
 Víceřádkový řetězec následující hned po záhlaví funkce v Pythonu je nazýván docstring (documentation string neboli 
@@ -27,7 +25,7 @@ Přestože je to nepovinný doplněk programového kódu, je považován za "goo
 zásad, které by měl programátor v Pythonu dodržovat.
 Docstrings se zapisují mezi trojnásobné uvozovky (tedy podobně jako komentáře).
 Tyto dokumentační řetězce jsou přístupné prostřednictvím "magického" __doc__ atributu funkce.    
-'''
+
 
 # Odsazení bloku kódu uvnitř funkce a použití docstring
 def greet(name):
@@ -41,20 +39,26 @@ def greet(name):
 print(greet.__doc__)
 # Vyvolá funkci greet s parametrem 'Hilda'
 greet('Hilda')
+'''
 
 """
 Cvičení 2:
 
-Vytvořte libovolně pojmenovanou vlastní funkci s minimálně jedním parametrem, v níž využijete cyklus for, 
-aspoň jednu podmínku if a funkci print(). Dodržte správné odsazování kódu a opatřete funkci stručnou dokumentací.
-Do konzole vypište nejprve docstring vaší funkce a potom zavolejte funkci samotnou.   
+    Vytvořte libovolně pojmenovanou vlastní funkci s minimálně jedním parametrem, v níž využijete cyklus for, 
+    aspoň jednu podmínku if a funkci print(). Dodržte správné odsazování kódu a opatřete funkci stručnou dokumentací.
+    Do konzole vypište nejprve docstring vaší funkce a potom zavolejte funkci samotnou.   
 """
 
-def nums(n):
+def check_name_length(names, length_limit):
     """
-    Function to print numbers from 0 to a number n
+    Tato funkce kontroluje délku každého jména v seznamu a vypíše,
+    zda je jméno kratší nebo delší než daný limit znaků.
     """
-    for i in range(n):
-        print(i+1)
+    for name in names:
+        if len(name) <= length_limit:
+            print(f"Jméno {name} je krátké (<= {length_limit} znaků).")
+        else:
+            print(f"Jméno {name} je dlouhé (> {length_limit} znaků).")
+print(check_name_length.__doc__) 
+check_name_length(["Anna", "Petra", "Jakub", "Alexander"], 5)
 
-nums(15)
