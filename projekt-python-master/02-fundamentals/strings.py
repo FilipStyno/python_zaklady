@@ -150,6 +150,14 @@ Použijte kombinaci různý možností pro práci s řetězci (včetně různýc
 funkční kód, tím lepší).
 
 1. Převeďte "česky" zadané datum - např. 12. 10. 2020 - do podoby "databázové" podoby - např. 2020-10-12
+
+def prevod_data(ceske_datum):
+    d, m, r = ceske_datum.split('.')
+    return f"{r}-{m}-{d}"
+
+datum = input("Zadejte datum ve formátu 'dd.mm.yyyy': ") # priklad 12.10.2020
+print(prevod_data(datum))
+
 2. Vytvořte funkci, která vyrobí ze zadaného sousloví:
    a) identifikátor pro proměnné používané v Pythonu - např. To je proměnná v Pythonu = to_je_promenna_v_pythonu
    b) identifikátor pro camel syntax v JS - např. To je proměnná v Pythonu = toJePromennaVPythonu 
@@ -158,3 +166,12 @@ funkční kód, tím lepší).
 3. Vytvořte funkci, která vygeneruje náhodná hesla pro počet osob zadaný v parametru tak, aby heslo začínalo
    3 velkými písmeny, pokračovalo 3 malými písmeny, jedním speciálním znakem (-/+*) a končilo 3 náhodnými číslicemi.
 '''
+
+def string_to_identificators(str):
+    str = str.replace(" ","_").lower()
+    return str
+print(string_to_identificators(input("Zadej souslovi")))
+
+
+
+
