@@ -1,1 +1,1 @@
-"# projekt-python" 
+"Python project for school" 
