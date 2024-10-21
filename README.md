@@ -1,1 +1,1 @@
-"Python project for school" 
+Python project for school
