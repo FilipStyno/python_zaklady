@@ -9,6 +9,7 @@ https://www.youtube.com/watch?v=_uQrJ0TkZlc&list=PLDDhGQzLtPdbS987RIIT8WKwb-L_K2
 https://www.w3schools.com/python/python_lists.asp
 https://macek.sandbox.cz/texty/python-tutorial-cz/tut/node5.html
 '''
+import random
 
 '''
 Příklady různých seznamů v Pythonu:
@@ -56,11 +57,11 @@ print(f'\tVypíše každý druhý prvek ze seznamu letters: {letters[::2]}')
 # ??? 1. cvičení ???
 # Doplňte podle zadání chybějící u následujících tří výpisů
 print('\n1. Cvičení\n***********************************************************************************************')
-print(f'\tVypíše poslední 2 prvky ze seznamu numbers: ???')
-print(f'\tVypíše každý sudý prvek ze seznamu letters: ???')
-print(f'\tVypíše všechny hodnoty z mixed_list kromě dvou posledních: ???')
-print(f'\tVypíše hodnotu prvku name ze slovníku umístěného v seznamu mixed_list: ???')
-print(f'\tVypíše hodnotu předposledního čísla z listu numbers umístěného v seznamu mixed_list: ???')
+print(f'\tVypíše poslední 2 prvky ze seznamu numbers: {numbers[-2:]}')
+print(f'\tVypíše každý sudý prvek ze seznamu letters: {letters[1::2]}')
+print(f'\tVypíše všechny hodnoty z mixed_list kromě dvou posledních: {mixed_list[:-2]}')
+print(f'\tVypíše hodnotu prvku name ze slovníku umístěného v seznamu mixed_list: {mixed_list[-1]["name"]}')
+print(f'\tVypíše hodnotu předposledního čísla z listu numbers umístěného v seznamu mixed_list: {mixed_list[3][1][-2]}')
 print('***********************************************************************************************\n')
 # ??? Konec 1. cvičení ???
 
@@ -283,8 +284,29 @@ print(f'\tSbalení seznamů do proměnné values: {values}\n')
 # Snažte se vždy o co nejzhuštěnější kód - ideálně na 1 řádku (+ další řádek s kontrolním výpisem proměnné)
 # import knihovny pro generování náhodných čísel
 from random import randint
+import random
+import string
 
-print(f'\n*************************************\nCvičení 2\n*************************************')
+print(f'Cvičení 2\n*************************************')
+# Generating a list of numbers between 1 and 2000 that are divisible by 200
+hundreds = [num for num in range(1, 2001) if num % 200 == 0]
+print(hundreds)
+
+# Vygenerování 50 náhodných písmen abecedy (velká a malá písmena)
+ascii_list = [random.choice(string.ascii_uppercase) for let in range(50)]
+print(ascii_list)
+
+hundreds = hundreds[3:-3]
+print(hundreds)
+
+# unique = [set(ascii_list)]
+unique = [let for let in ascii_list if not ascii_list.count(let) > 1]
+print(unique)
+
+hund_ascii = list(zip(hundreds, ascii_list))
+print(hund_ascii)
+
+print(f'*************************************')
 
 
 
