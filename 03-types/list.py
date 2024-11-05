@@ -320,3 +320,13 @@ print(f'*************************************')
 # Záznamy budou seřazeny podle věku (sestupně).
 
 print(f'\n*************************************\nCvičení 3\n*************************************')
+persons += ('Tom', 17, 'žena'), ('Daniela', 23, 'muž'), ('Andrea', 92, 'žena')
+print(persons)
+women = list(filter(lambda clovek: clovek[2] == "žena", persons))
+women1 = [item[0] for item in persons if item[2] == "žena"]
+for woman in women1:
+    print(f"{woman}\n{'-' * len(woman)}")
+ipeople = list(filter(lambda person: 'i' in person[0].lower(), persons))
+ipeople2 = [person for person in persons if "i" in person[0].lower()]
+csv = "".join([f"{i};{p[0]};{p[1]};{p[2]}\n" for i, p in enumerate(ipeople)])
+print(csv)
